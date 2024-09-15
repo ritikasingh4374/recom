@@ -1,12 +1,12 @@
 * {
     margin: 0;
-    padding: 0;
+    /* padding: 0px 12px; */
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: url('download.png') no-repeat center center fixed; /* Replace with your image URL */
+    background: url('2367a3cfd15664ac12519a16cda1c74f.jpg') no-repeat center center fixed; /* Replace with your image URL */
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -14,95 +14,44 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
+    flex-direction: column;
+    padding: 12px;
 }
 
-/* Bubble Effect */
-body::before, body::after {
-    content: '';
+/* Navbar Styles */
+.navbar {
+    width: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(80px);
-    animation: float 10s infinite ease-in-out;
-    z-index: 0;
+    top: 0;
+    left: 0;
+    padding: 12px;
+    /* background-color: rgba(0, 0, 0, 0.3); Semi-transparent background for navbar */
+    z-index: 2; /* Ensure navbar stays above other elements */
+    text-align: center;
 }
 
-body::before {
-    width: 150%;
-    height: 150%;
-    left: 10%;
-    top: 20%;
-    animation-duration: 12s;
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    padding: 0;
 }
 
-body::after {
-    width: 120%;
-    height: 120%;
-    left: 70%;
-    top: 30%;
-    animation-duration: 8s;
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(-10px);
-    }
-    50% {
-        transform: translateY(10px);
-    }
-}
+/* .navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #000000;
+} */
 
-/* Shape styles */
-.shape {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    filter: blur(30px);
-    animation: floatShapes 10s infinite ease-in-out;
-    z-index: 0;
-}
-
-.shape.circle {
-    width: 200px;
-    height: 200px;
-    top: 10%;
-    left: 15%;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.shape.circle-small {
-    width: 100px;
-    height: 100px;
-    top: 60%;
-    left: 70%;
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.shape.triangle {
-    width: 0;
-    height: 0;
-    border-left: 60px solid transparent;
-    border-right: 60px solid transparent;
-    border-bottom: 100px solid rgba(255, 255, 255, 0.07);
-    top: 40%;
-    left: 25%;
-    transform: rotate(30deg);
-    z-index: 0;
-}
-
-@keyframes floatShapes {
-    0%, 100% {
-        transform: translateY(-10px);
-    }
-    50% {
-        transform: translateY(10px);
-    }
-}
-
+/* Container holding the glass box */
 .container {
     display: flex;
     justify-content: center;
@@ -110,61 +59,68 @@ body::after {
     height: 100%;
     width: 100%;
     z-index: 1;
+    /* margin-top: 100px; Adjust margin to avoid overlap with navbar */
 }
 
-/* Large Square Glass Box */
-/* Large Square Glass Box */
+/* Glass Box Styles */
 .glass-box {
-    background: rgba(255, 255, 255, 0.05); /* Increased transparency */
-    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.05); /* More transparent */
+    backdrop-filter: blur(18px) saturate(180%);
     border-radius: 20px;
     padding: 40px;
-    width: 600px;  /* Large square size */
-    height: 600px; /* Set height equal to width for square */
-    text-align: center;
+    width: 850px;  /* Large square size */
+    height: 500px; /* Set height equal to width for square */
     color: #e0e0e0;
     z-index: 1;
+    text-align: left; /* Align text to the left */
 
-    /* Improved 3D shadow and glow */
-    box-shadow:
-        inset 0 0 15px rgba(255, 255, 255, 0.2), /* Inner glow for glass thickness */
-        0 4px 6px rgba(0, 0, 0, 0.3),            /* Softer outer shadow */
-        0 10px 30px rgba(5, 31, 27, 0.5);        /* Deeper shadow for depth */
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Reduced border opacity */
+    /* 3D shadow and glow */
+    border: 1px solid rgba(255, 255, 255, 0.15);
     position: relative;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
-/* Glass reflection effect */
-/* .glass-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    height: 100%;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), transparent);
-    border-radius: 20px;
-    z-index: 1;
-    pointer-events: none; /* Ensures clicks pass through */
-} */
+/* Large text inside the glass box */
+.large-text {
+    font-size: 42px; /* Larger font size */
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-left: 30px;
+}
 
-/* Subtle reflection at the top */
-.glass-box::after {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: calc(100% - 20px);
-    height: 30px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.15), transparent);
-    border-radius: 50%;
-    z-index: 1;
-    pointer-events: none;
+/* Adjusted margin for text alignment */
+.large-text h1 {
+    margin-left: 0; /* No left margin for the header */
 }
 
 h1, h2 {
-    margin-bottom: 20px;
-    font-size: 26px;
+    margin-bottom: 40px;
+    font-size: 46px;
+}
+
+/* Button Group */
+.btn-group {
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the left */
+    margin-top: 30px;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #f1f1f1;
+    margin-left: 30px;
+    padding: 12px 24px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-right: 20px; /* Add spacing between buttons */
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #000000;
+    transform: translateY(-3px);
 }
