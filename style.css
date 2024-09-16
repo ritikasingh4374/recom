@@ -12,7 +12,7 @@ body {
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
-    padding: 12px;
+    padding: -15px;
     background-color: #000000;
 }
 
@@ -24,7 +24,7 @@ body {
     height: 100vh;
     width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('2367a3cfd15664ac12519a16cda1c74f.jpg') no-repeat center center fixed;
+                url('image.png') no-repeat center center fixed;
     background-size: cover;
     z-index: 1;
 }
@@ -43,8 +43,8 @@ body {
     backdrop-filter: blur(18px) saturate(180%);
     border-radius: 20px;
     padding: 40px;
-    width: 850px;
-    height: 500px;
+    width: 750px;
+    height: 450px;
     color: #e0e0e0;
     z-index: 1;
     text-align: left;
@@ -59,7 +59,7 @@ body {
     font-weight: bold;
     color: #ffffff;
     margin-bottom: 30px;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-left: 30px;
 }
 
@@ -72,7 +72,8 @@ h1, h2 {
 .btn-group {
     display: flex;
     justify-content: flex-start;
-    margin-top: 30px;
+    margin-top: 20px;
+    font-size: 10px;
 }
 
 .btn {
@@ -102,6 +103,15 @@ h1, h2 {
     padding: 12px;
     z-index: 2;
     text-align: center;
+    display: flex;
+    align-items: right;
+}
+
+.heading{
+    font-size: 14px;
+    color: #ffffff;
+    margin-right: 62rem;
+    /* padding-right: 2px; */
 }
 
 .navbar ul {
@@ -113,14 +123,13 @@ h1, h2 {
 
 .navbar ul li {
     position: relative;
-    margin: 0 15px;
+    margin: 0px 10px;
 }
 
 .navbar ul li a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 14px;
-    padding: 15px;
+    font-size: 10px;
     position: relative;
 }
 
@@ -185,6 +194,60 @@ h1, h2 {
 .book:hover, .movie:hover, .series:hover {
     transform: scale(1.1); /* Increases the size by 10% */
 }
+/* Quiz options container - now horizontal */
+.quiz-options {
+    position: absolute;
+    bottom: -25px; 
+    right: -80px;   /* Keep it aligned with the glass box */
+    display: flex;
+    flex-direction: row;  /* Horizontal layout */
+    gap: 20px;            /* Spacing between the boxes */
+}
+
+/* Common styles for each quiz option */
+.quiz-option {
+    color: #ffffff;
+    padding: 120px 60px;
+    /* border-radius: 15px; */
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0;
+    opacity: 1; /* Full opacity */
+    background-size: cover; /* Ensure background image covers the entire box */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover effect for pop */
+.quiz-option:hover {
+    transform: scale(1.2); /* Increase size by 20% on hover */
+    background-color: rgba(255, 255, 255, 0.3); /* Brighten background on hover */
+}
+
+/* Specific images for each quiz option */
+.book-quiz {
+    background-image: url('28822156b225c4cf1c8d224f0cb42214.jpg'); /* Replace with the path to your image */
+}
+
+.movie-quiz {
+    background-image: url('58e96571acce841096995ad1e5d02cb6.jpg'); /* Replace with the path to your image */
+}
+
+.series-quiz {
+    background-image: url('ad234017c22389e023788b39bacdb908.jpg'); /* Replace with the path to your image */
+}
+
+/* Optional hover effect to slightly brighten the background images */
+.book-quiz:hover, .movie-quiz:hover, .series-quiz:hover {
+    filter: brightness(1.2); /* Brighten background image on hover */
+}
+
 
 /* Book, Movie, Series Images Styles */
 .book img, .movie img, .series img {
