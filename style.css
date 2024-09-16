@@ -1,80 +1,53 @@
+/* General Styles */
 * {
     margin: 0;
-    /* padding: 0px 12px; */
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: url('2367a3cfd15664ac12519a16cda1c74f.jpg') no-repeat center center fixed; /* Replace with your image URL */
-    background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
     flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
     padding: 12px;
+    background-color: #000000;
 }
 
-/* Navbar Styles */
-.navbar {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 12px;
-    /* background-color: rgba(0, 0, 0, 0.3); Semi-transparent background for navbar */
-    z-index: 2; /* Ensure navbar stays above other elements */
-    text-align: center;
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: right;
-    padding: 0;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 14px;
-    padding: 15px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-/* .navbar ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: #000000;
-} */
-
-/* Container holding the glass box */
+/* Container holding the glass box with background image */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100vh;
     width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('2367a3cfd15664ac12519a16cda1c74f.jpg') no-repeat center center fixed;
+    background-size: cover;
     z-index: 1;
-    /* margin-top: 100px; Adjust margin to avoid overlap with navbar */
+}
+
+/* Seamless transition to recommendation section */
+.transition-section {
+    height: 50px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), black);
+    width: 100%;
+    margin: 0;
 }
 
 /* Glass Box Styles */
 .glass-box {
-    background: rgba(255, 255, 255, 0.05); /* More transparent */
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(18px) saturate(180%);
     border-radius: 20px;
     padding: 40px;
-    width: 850px;  /* Large square size */
-    height: 500px; /* Set height equal to width for square */
+    width: 850px;
+    height: 500px;
     color: #e0e0e0;
     z-index: 1;
-    text-align: left; /* Align text to the left */
-
-    /* 3D shadow and glow */
+    text-align: left;
     border: 1px solid rgba(255, 255, 255, 0.15);
     position: relative;
     opacity: 0.8;
@@ -82,7 +55,7 @@ body {
 
 /* Large text inside the glass box */
 .large-text {
-    font-size: 42px; /* Larger font size */
+    font-size: 42px;
     font-weight: bold;
     color: #ffffff;
     margin-bottom: 30px;
@@ -90,20 +63,15 @@ body {
     margin-left: 30px;
 }
 
-/* Adjusted margin for text alignment */
-.large-text h1 {
-    margin-left: 0; /* No left margin for the header */
-}
-
 h1, h2 {
-    margin-bottom: 40px;
-    font-size: 46px;
+    font-size: 42px; /* Reduced font size */
+    margin-bottom: 20px;
 }
 
 /* Button Group */
 .btn-group {
     display: flex;
-    justify-content: flex-start; /* Align buttons to the left */
+    justify-content: flex-start;
     margin-top: 30px;
 }
 
@@ -116,11 +84,130 @@ h1, h2 {
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-right: 20px; /* Add spacing between buttons */
+    margin-right: 20px;
 }
 
 .btn:hover {
     background-color: rgba(255, 255, 255, 0.25);
     color: #000000;
     transform: translateY(-3px);
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 12px;
+    z-index: 2;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    padding: 0;
+}
+
+.navbar ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 15px;
+    position: relative;
+}
+
+.navbar ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #ffffff;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover::before {
+    width: 100%;
+}
+
+/* Transition Section */
+.transition-section {
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, black);
+    margin: 0;
+}
+
+/* Recommended Slider Section */
+.recommended-slider {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: black;
+    border-radius: 15px;
+    color: white;
+}
+.book-slider .slick-slide {
+    width: 200px !important; /* Set a fixed width or reduce the size */
+}
+
+.slider-item {
+    text-align: center;
+}
+.recommended-slider h2 {
+    font-size: 24px;  /* Adjust the size to fit your needs */
+    margin-bottom: 20px;
+    color: white;
+}
+
+
+/* Book, Movie, Series Container Styles */
+.book, .movie, .series {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    width: 30%;
+    margin: 15px;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover */
+}
+
+/* Hover effect to increase the size */
+.book:hover, .movie:hover, .series:hover {
+    transform: scale(1.1); /* Increases the size by 10% */
+}
+
+/* Book, Movie, Series Images Styles */
+.book img, .movie img, .series img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover */
+}
+
+/* Hover effect for image zoom */
+.book:hover img, .movie:hover img, .series:hover img {
+    transform: scale(1.1); /* Slight zoom on the image as well */
+}
+
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer p {
+    color: white;
 }
