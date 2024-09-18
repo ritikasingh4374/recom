@@ -23,6 +23,18 @@
             </ul>
         </nav>
 
+        <nav class="navbar">
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Series</a></li>
+            </ul>
+        </nav>
+        
+   
+           
         <!-- Glass Box -->
        <!-- Glass Box -->
 <div class="glass-box">
@@ -47,94 +59,95 @@
 
     <!-- Recommended Books Section with Slider -->
     <section class="recommended-slider">
-        <h2>Our Recommendation for Books</h2>
-        <div class="book-slider">
-            <div class="book">
-                <img src="books\book1.png" alt="Book 1">
-                <h3>Book Title 1</h3>
-                <p>Author 1</p>
-            </div>
-            <div class="book">
-                <img src="books\book2.png" alt="Book 2">
-                <h3>Book Title 2</h3>
-                <p>Author 2</p>
-            </div>
-            <div class="book">
-                <img src="books\book3.png" alt="Book 3">
-                <h3>Book Title 3</h3>
-                <p>Author 3</p>
-            </div>
-            <div class="book">
-                <img src="books\book1.png" alt="Book 4">
-                <h3>Book Title 4</h3>
-                <p>Author 4</p>
-            </div>
-            <div class="book">
-                <img src="books\book2.png" alt="Book 5">
-                <h3>Book Title 5</h3>
-                <p>Author 5</p>
-            </div>
-            <div class="book">
-                <img src="books\book3.png" alt="Book 5">
-                <h3>Book Title 5</h3>
-                <p>Author 5</p>
-            </div>
-            <div class="book">
-                <img src="books\book3.png" alt="Book 5">
-                <h3>Book Title 5</h3>
-                <p>Author 5</p>
+        <div class="book_recomend">
+            <h2>OUR RECOMMENDATION FOR BOOKS</h2>
+            <div class="book-slider">
+                <div class="book">
+                    <img src="books\book1.png" alt="Book 1">
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="book">
+                    <img src="books\book2.png" alt="Book 2">
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="book">
+                    <img src="books\book3.png" alt="Book 3">
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="book">
+                    <img src="books\book1.png" alt="Book 4">
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="book">
+                    <img src="books\book2.png" alt="Book 5">
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="book">
+                    <img src="books\book3.png" alt="Book 5">
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="book">
+                    <img src="books\book3.png" alt="Book 5">
+                    <h3></h3>
+                    <p></p>
+                </div>
             </div>
         </div>
     </section>
 
      <!-- Additional Section 3 -->
      <section class="additional-section">
-        <h2>Top Picks for You</h2>
+        <img src="extras\sharee.png" alt="image" class="add_img">
         <p>Explore our top picks based on your preferences and interests.</p>
     </section>
 
 
     <section class="recommended-slider">
-        <h2>Our Recommendation for Movies</h2>
+        <div class="movie_recomend">
+        <h2>OUR RECOMMENDATION FOR MOVIES</h2>
         <div class="book-slider">
             <div class="book">
                 <img src="movies\movie1.png" alt="Book 1">
-                <h3>Book Title 1</h3>
-                <p>Author 1</p>
+                <h3></h3>
+                <p></p>
             </div>
             <div class="book">
                 <img src="movies\movie2.png" alt="Book 2">
-                <h3>Book Title 2</h3>
-                <p>Author 2</p>
+                <h3></h3>
+                <p></p>
             </div>
             <div class="book">
                 <img src="movies\movie3.png" alt="Book 3">
-                <h3>Book Title 3</h3>
-                <p>Author 3</p>
+                <h3></h3>
+                <p></p>
             </div>
             <div class="book">
                 <img src="movies\movie1.png" alt="Book 4">
-                <h3>Book Title 4</h3>
-                <p>Author 4</p>
+                <h3></h3>
+                <p></p>
             </div>
             <div class="book">
                 <img src="movies\movie3.png" alt="Book 5">
-                <h3>Book Title 5</h3>
-                <p>Author 5</p>
+                <h3></h3>
+                <p></p>
             </div>
         </div>
+    </div>
     </section>
 
      <!-- Additional Section 3 -->
      <section class="additional-section">
-        <h2>Top Picks for You</h2>
-        <img src="know your type.png" alt="image" class="add_img">
-        <p>Explore our top picks based on your preferences and interests.</p>
     </section>
 
 
     <section class="recommended-slider">
-        <h2>Our Recommendation for Series</h2>
+        <h2>OUR RECOMMENDATION FOR WEB SERIES</h2>
         <div class="book-slider">
             <div class="book">
                 <img src="movies\movie1.png" alt="Book 1">
@@ -166,8 +179,6 @@
 
     <!-- Footer Section -->
     <footer class="footer">
-        <p>&copy; 2024 Quiz Website. All Rights Reserved.</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 
     <!-- Include jQuery -->
@@ -175,34 +186,6 @@
 
     <!-- Include Slick JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
-    <!-- Slick Slider Script -->
-    <script>
-        $(document).ready(function(){
-            $('.book-slider').slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                dots: true,
-                arrows: true,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                responsive: [
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2,
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
