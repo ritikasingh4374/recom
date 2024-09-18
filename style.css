@@ -12,8 +12,8 @@ body {
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
-    padding: -15px;
-    background-color: #000000;
+    padding: 0; /* Corrected padding */
+    background-color: #000;
 }
 
 /* Container holding the glass box with background image */
@@ -24,8 +24,7 @@ body {
     height: 100vh;
     width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url(main_img/image.png) no-repeat center center fixed;
-    background-size: cover;
+                url(main_img/image.png) no-repeat center/cover fixed;
     z-index: 1;
 }
 
@@ -41,7 +40,6 @@ body {
     z-index: 1;
     text-align: left;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    position: relative;
     opacity: 0.8;
 }
 
@@ -57,7 +55,7 @@ body {
 
 h1, h2 {
     font-size: 42px; /* Reduced font size */
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 /* Button Group */
@@ -65,24 +63,22 @@ h1, h2 {
     display: flex;
     justify-content: flex-start;
     margin-top: 20px;
-    font-size: 10px;
 }
 
 .btn {
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.15);
     color: #f1f1f1;
-    margin-left: 30px;
     padding: 12px 24px;
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 0 20px 0 30px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-right: 20px;
 }
 
 .btn:hover {
     background-color: rgba(255, 255, 255, 0.25);
-    color: #000000;
+    color: #000;
     transform: translateY(-3px);
 }
 
@@ -91,35 +87,29 @@ h1, h2 {
     width: 100%;
     position: absolute;
     top: 0;
-    left: 0;
     padding: 12px;
-    z-index: 2;
-    text-align: center;
     display: flex;
-    align-items: right;
+    justify-content: space-between;
+    z-index: 2;
 }
 
 .heading {
-    font-size: 14px;
-    color: #ffffff;
-    margin-right: 62rem;
+    font-size: 25px;
+    color: #d0cbb5;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    justify-content: right;
-    padding: 0;
 }
 
 .navbar ul li {
-    position: relative;
-    margin: 0px 10px;
+    margin: 0 10px;
 }
 
 .navbar ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #fff;
     font-size: 10px;
     position: relative;
 }
@@ -127,9 +117,9 @@ h1, h2 {
 .navbar ul li a::before {
     content: '';
     position: absolute;
-    width: 0%;
+    width: 0;
     height: 2px;
-    background-color: #ffffff;
+    background-color: #fff;
     bottom: 0;
     left: 0;
     transition: width 0.3s ease-in-out;
@@ -140,21 +130,16 @@ h1, h2 {
 }
 
 /* Transition Section */
-.transition-section {
+/* .transition-section {
     height: 100px;
-    background: linear-gradient(to bottom, transparent, black);
-    margin: 0;
-}
+    background: linear-gradient(to bottom, transparent, #000);
+} */
 
 /* Recommended Slider Section */
 .recommended-slider {
     width: 100%;
-    background-color:#f9f4f0;
-    color: white;
-}
-
-.slick-dots{
-    background-color: #0f0e0e;
+    background-color: #f9f4f0;
+    color: #fff;
 }
 
 .book_recomend{
@@ -169,140 +154,109 @@ h1, h2 {
     background-color: #eee5d1;
 }
 
-.slick-dots{
-    background-color:#f9f4f0;
-    margin-bottom: -40px;
-}
-
-.book-slider .slick-slide {
-    width: 180px !important; /* Set a fixed width or reduce the size */
-    padding: 0;
-}
-
-.slider-item {
-    text-align: center;
-}
-
-
 .recommended-slider h2 {
-    font-size: 15px;  /* Adjust the size to fit your needs */
-    color: #f9f4f0;
+    font-size: 23px;  /* Adjust the size to fit your needs */
+    color: #a29e9b;
     text-align: center;
-    padding: 40px;
+    padding: 30px 0px 0px;
 }
 
-/* Position the Previous and Next buttons inside the slider */
+.movie_recomend h2{
+    color: #6b5d5c;
+}
+
+.slick-dots {
+    background-color: #f9f4f0;
+    margin-bottom: -40px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
 .slick-prev, .slick-next {
-    z-index: 1;              /* Ensure buttons are above other elements */
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;      /* Position buttons absolutely within the slider */
-    top: 50%;                /* Center the buttons vertically */
-    transform: translateY(-50%); /* Align buttons perfectly in the middle */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-/* Position the Previous button inside the slider */
 .slick-prev {
-    left: 10px; /* Adjust distance from the left edge */
+    left: 10px;
 }
 
-/* Position the Next button inside the slider */
 .slick-next {
-    right: 10px; /* Adjust distance from the right edge */
+    right: 10px;
 }
 
-/* Style the arrows inside the buttons */
 .slick-prev:before, .slick-next:before {
-    font-size: 20px;        /* Adjust arrow size */
-    color: rgb(43, 41, 41);           /* Set arrow color */
-}
-
-/* Add hover effect for buttons */
-/* Position the dots inside the slider */
-.slick-dots {
-    position: absolute;         /* Position absolutely inside the slider */
-    bottom: 10px;               /* Place it at the bottom inside the slider */
-    left: 50%;                  /* Center the dots horizontally */
-    transform: translateX(-50%); /* Adjust to perfectly center */
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    font-size: 20px;
+    color: #2b2929;
 }
 
 /* Style for slick dots */
 .slick-dots li button:before {
-    font-size: 12px;            /* Adjust dot size */
-    color: #f9f4f0;               /* Set default dot color */
+    font-size: 12px;
+    color: #f9f4f0;
     opacity: 0.75;
 }
 
-/* Style active dot */
 .slick-dots li.slick-active button:before {
-    color: #f9f4f0                 /* Set active dot color */
+    color: #f9f4f0;
 }
 
-/* Add spacing between dots */
-.slick-dots li {
-    margin: 0 5px;              /* Adjust spacing between dots */
+/* Slider Items */
+.book-slider .slick-slide {
+    width: 180px !important;
+    padding: 0;
 }
-
 
 .book, .movie, .series {
     background: rgba(71, 68, 68, 0.1);
-    /* padding: 10px; */
-   
     width: 25%;
-    margin: 25px; /* Spacing between containers */
+    margin: 50px 28px 45px;
+    padding: 40px;
     text-align: center;
-    color: rgb(12, 12, 12);
+    color: #0c0c0c;
     transition: transform 0.3s ease-in-out;
-    align-items: center;
-    margin-bottom: 100px;
-
+    z-index: 3;
 }
 
-/* Hover effect to increase the size */
 .book:hover, .movie:hover, .series:hover {
     transform: scale(1.13);
 }
 
-/* Ensure uniform image size */
 .book img, .movie img, .series img {
-    width: 100%; /* Make the images responsive */
-    height: 270px; /* Set a fixed height for all images */
-    object-fit: cover; /* Crop images to maintain uniform size without distortion */
-     transition: transform 0.3s ease-in-out;
-     border-radius: 10px;
-    
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
 }
 
-
-
-
-/* Quiz options container - now horizontal */
+/* Quiz options container */
 .quiz-options {
     position: absolute;
-    bottom: -25px; 
-    right: -80px;   /* Keep it aligned with the glass box */
+    bottom: -25px;
+    right: -80px;
     display: flex;
-    flex-direction: row;  /* Horizontal layout */
-    gap: 20px;            /* Spacing between the boxes */
+    gap: 20px;
 }
 
-/* Common styles for each quiz option */
 .quiz-option {
-    color: #ffffff;
+    color: #fff;
     padding: 120px 60px;
-    /* border-radius: 15px; */
     text-align: center;
     font-size: 12px;
     text-decoration: none;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 0;
-    opacity: 1; /* Full opacity */
-    background-size: cover; /* Ensure background image covers the entire box */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
@@ -310,43 +264,39 @@ h1, h2 {
     justify-content: center;
 }
 
-/* Hover effect for pop */
 .quiz-option:hover {
-    transform: scale(1.2); /* Increase size by 20% on hover */
-    background-color: rgba(255, 255, 255, 0.3); /* Brighten background on hover */
+    transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Specific images for each quiz option */
 .book-quiz {
-    background-image: url('main_img/28822156b225c4cf1c8d224f0cb42214.jpg'); /* Replace with the path to your image */
+    background-image: url('main_img/28822156b225c4cf1c8d224f0cb42214.jpg');
 }
 
 .movie-quiz {
-    background-image: url('main_img/58e96571acce841096995ad1e5d02cb6.jpg'); /* Replace with the path to your image */
+    background-image: url('main_img/58e96571acce841096995ad1e5d02cb6.jpg');
 }
 
 .series-quiz {
-    background-image: url('main_img/ad234017c22389e023788b39bacdb908.jpg'); /* Replace with the path to your image */
+    background-image: url('main_img/ad234017c22389e023788b39bacdb908.jpg');
 }
 
-/* Optional hover effect to slightly brighten the background images */
 .book-quiz:hover, .movie-quiz:hover, .series-quiz:hover {
-    filter: brightness(1.2); /* Brighten background image on hover */
+    filter: brightness(1.2);
 }
 
-/* Additional Sections Styles */
-/* Additional Sections Styles */
+/* Additional Sections */
 .additional-section {
     width: 100%;
     height: 35rem;
     background-color: #f9f4f0;
-    display: flex; /* Use flexbox to align image and text */
-    color: #000000;
-    text-align: left; /* Align text to the left */
+    display: flex;
+    color: #000;
 }
 
 .additional-section img.add_img {
-    width: 30%; /* Adjust the size of the image */
+    width: 30%;
     height: auto;
 }
 
@@ -357,9 +307,8 @@ h1, h2 {
 
 .additional-section p {
     font-size: 16px;
-    max-width: 600px; /* Limit the width of the text area */
+    max-width: 600px;
 }
-
 
 /* Footer Styles */
 .footer {
@@ -374,128 +323,3 @@ h1, h2 {
     color: white;
 }
 
-
-/* Tablet Version */
-/* Tablet Version */
-@media only screen and (max-width: 1024px) {
-    /* Navbar adjustments for visibility */
-    .navbar ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-    
-    .navbar ul li a {
-        font-size: 14px; /* Slightly larger text for tablets */
-    }
-
-    /* Book covers and movie posters maintain rectangular size */
-    .book img, .movie img, .series img {
-        width: auto; /* Maintain aspect ratio */
-        height: 300px; /* Set height for posters */
-    }
-
-    /* Glass box and large text adjustments */
-    .glass-box {
-        width: 90%;
-        height: 400px;
-        padding: 30px;
-    }
-
-    .large-text {
-        font-size: 32px; /* Resize text */
-        margin-left: 15px;
-    }
-
-    /* Quiz options adjustments */
-    .quiz-options {
-        bottom: -20px; 
-        right: -20px;
-        gap: 10px; /* Reduce gap between boxes */
-    }
-
-    .quiz-option {
-        padding: 80px 40px;
-        font-size: 12px; /* Slightly larger font */
-    }
-
-    /* Footer spacing */
-    .footer {
-        padding: 20px;
-    }
-}
-
-
-/* Mobile Phone Version */
-/* Mobile Phone Version */
-@media only screen and (max-width: 767px) {
-    /* Navbar adjustments for mobile - hamburger menu */
-    .navbar ul {
-        display: none; /* Hide navbar links */
-    }
-
-    .navbar .hamburger {
-        display: block;
-        cursor: pointer;
-        font-size: 24px;
-        color: white;
-    }
-
-    .navbar .hamburger.active + ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar ul li a {
-        font-size: 16px; /* Larger text for easy readability */
-        padding: 10px;
-    }
-
-    /* Book covers and movie posters maintain rectangular size */
-    .book img, .movie img, .series img {
-        width: auto; /* Maintain aspect ratio */
-        height: 200px; /* Adjust height for mobile screens */
-    }
-
-    /* Adjust body padding for mobile */
-    body {
-        padding: 0;
-    }
-
-    /* Glass box adjustments */
-    .glass-box {
-        width: 90%;
-        height: 300px;
-        padding: 20px;
-    }
-
-    /* Reduce large text size */
-    .large-text {
-        font-size: 22px;
-        margin-left: 10px;
-    }
-
-    /* Adjust quiz options layout for mobile */
-    .quiz-options {
-        bottom: -15px; 
-        right: -10px;
-        flex-direction: column; /* Stack options vertically */
-        gap: 5px; /* Reduce gap */
-    }
-
-    .quiz-option {
-        padding: 60px 30px;
-        font-size: 10px; /* Adjust for mobile */
-    }
-
-    /* Adjust the recommended slider for mobile */
-    .recommended-slider h2 {
-        font-size: 16px; /* Smaller font */
-    }
-
-    /* Footer adjustments */
-    .footer {
-        padding: 10px;
-    }
-}
